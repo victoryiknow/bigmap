@@ -1,0 +1,60 @@
+<div id="map" role="application" aria-label="지도"></div>
+<div class="cross" id="cross" hidden></div>
+
+<div class="top" id="top">
+  <div class="sbar">
+    <span class="logo">빅맵</span>
+    <input id="q" type="search" placeholder="가게 이름, 메뉴, 동네" aria-label="검색" autocomplete="off" enterkeyhint="search">
+    <button type="button" class="ib" id="qClear" aria-label="검색어 지우기" hidden>×</button>
+    <button type="button" class="ib" id="filterBtn" aria-label="필터"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><b id="fN" hidden></b></button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="chips subchips" id="subchips" hidden></div>
+</div>
+
+<div class="ctrl" id="ctrl">
+  <button type="button" id="north" aria-label="북쪽을 위로" hidden><span class="nd"><i>▲</i><b>N</b></span></button>
+  <button type="button" id="legendBtn" aria-label="표시 기준" class="lgb">?</button>
+  <button type="button" class="zm" id="zin" aria-label="확대"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+  <button type="button" class="zm" id="zout" aria-label="축소"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+  <button type="button" id="me" aria-label="내 위치"></button>
+</div>
+
+<section class="sheet" id="sheet" aria-label="가게 목록">
+  <div class="shd" id="shd"><div class="grab"></div><div class="shrow" id="shrow"></div></div>
+  <div class="shb" id="shb">
+    <div id="listView">
+      <div id="list"></div>
+      <button type="button" class="more" id="moreBtn" hidden>더 보기</button>
+      <div class="foot">
+        <p>미쉐린 가이드, 블루리본 서베이, 백년가게, 서울미래유산, 수요미식회, 착한가격업소, 믿고 보는 유튜버들의 방문 기록, 그리고 빅토리아노가 직접 모은 맛집을 한 지도에 담았어요.</p>
+        <p>영업시간과 가격은 바뀔 수 있어요. 가기 전에 네이버지도에서 한 번 확인해 주세요. 하트와 내 코스는 이 휴대폰에만 저장돼요.</p>
+        <p>지도 © OpenStreetMap 기여자</p>
+      </div>
+    </div>
+    <div id="detail" hidden></div>
+  </div>
+</section>
+
+<div class="modal" id="fpanel" hidden>
+  <div class="mbox" role="dialog" aria-label="필터">
+    <div class="mhd"><h2>필터</h2><button type="button" class="ib" id="fClose" aria-label="닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="mbd" id="fbody"></div>
+    <div class="mft"><button type="button" class="btn" id="resetAll">모두 해제</button><button type="button" class="btn primary" id="fApply">보기</button></div>
+  </div>
+</div>
+<div class="form" id="form" hidden></div>
+<div class="legend" id="legend" hidden>
+  <h3>지도 표시 기준</h3>
+  <ul>
+    <li><i class="lg st">★</i>내 맛집 (빅토리아노 리스트)</li>
+    <li><i class="lg" style="background:var(--c-food)"></i>식당</li>
+    <li><i class="lg" style="background:var(--c-cafe)"></i>카페·빵·디저트</li>
+    <li><i class="lg" style="background:var(--c-vis)"></i>직접 가봄</li>
+    <li><i class="lg big" style="background:var(--c-food)"></i>점이 클수록 여러 출처에서 인정한 곳</li>
+    <li><i class="lg n">12</i>숫자는 그 근처에 모인 가게 수 (누르면 확대)</li>
+  </ul>
+  <p>‘믿을 만한 곳만’은  미쉐린·블루리본·백년가게·유튜버·수요미식회·다이닝코드 상위 등 서로 다른 출처 두 곳 이상에 나온 곳이에요.</p>
+  <button type="button" class="btn" id="legendClose">닫기</button>
+</div>
+<div class="toast" id="toast" hidden></div>
